@@ -1,0 +1,43 @@
+package com.firstapp.login;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity2 extends AppCompatActivity {
+    EditText signinEmailET, signinPasswordET;
+    Button signin;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+        signinEmailET =findViewById(R.id.signinedittextemailid);
+        signinPasswordET =findViewById(R.id.signinedittextpassword);
+        signin =findViewById(R.id.signin);
+        String RegisteredEmail, RegisteredPassword;
+        RegisteredEmail=getIntent().getStringExtra("email");
+        RegisteredPassword=getIntent().getStringExtra("password");
+
+        signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String Email= signinEmailET.getText().toString();
+                String Password= signinPasswordET.getText().toString();
+                if (RegisteredEmail.equals(Email) && RegisteredPassword.equals(Password)){
+                    Toast.makeText(MainActivity2.this, "Sign In is Successful", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(MainActivity2.this, "Sign In Failed, Please Check the Email and Password", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+}

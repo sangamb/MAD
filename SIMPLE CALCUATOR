@@ -1,0 +1,191 @@
+package com.firstapp.simplecalculator;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    TextView result;
+    EditText editText1,editText2;
+    char op;
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        editText1=findViewById(R.id.eT1);
+        editText2=findViewById(R.id.eT2);
+        result=findViewById(R.id.res);
+
+
+
+    }
+
+    public void one(View view) {
+        if(editText1.hasFocus()){
+            editText1.append("1");
+        }
+        if(editText2.hasFocus()){
+            editText2.append("1");
+        }
+    }
+
+    public void two(View view) {
+        if(editText1.hasFocus()){
+            editText1.append("2");
+        }
+        if(editText2.hasFocus()){
+            editText2.append("2");
+        }
+    }
+
+    public void three(View view) {
+        if(editText1.hasFocus()){
+            editText1.append("3");
+        }
+        if(editText2.hasFocus()){
+            editText2.append("3");
+        }
+    }
+
+    public void four(View view) {
+        if(editText1.hasFocus()){
+            editText1.append("4");
+        }
+        if(editText2.hasFocus()){
+            editText2.append("4");
+        }
+    }
+
+    public void five(View view) {
+        if(editText1.hasFocus()){
+            editText1.append("5");
+        }
+        if(editText2.hasFocus()){
+            editText2.append("5");
+        }
+    }
+
+    public void six(View view) {
+        if(editText1.hasFocus()){
+            editText1.append("6");
+        }
+        if(editText2.hasFocus()){
+            editText2.append("6");
+        }
+    }
+
+    public void seven(View view) {
+        if(editText1.hasFocus()){
+            editText1.append("7");
+        }
+        if(editText2.hasFocus()){
+            editText2.append("7");
+        }
+    }
+
+    public void eight(View view) {
+        if(editText1.hasFocus()){
+            editText1.append("8");
+        }
+        if(editText2.hasFocus()){
+            editText2.append("8");
+        }
+    }
+
+    public void nine(View view) {
+        if(editText1.hasFocus()){
+            editText1.append("9");
+        }
+        if(editText2.hasFocus()){
+            editText2.append("9");
+        }
+    }
+
+    public void zero(View view) {
+        if(editText1.hasFocus()){
+            editText1.append("0");
+        }
+        if(editText2.hasFocus()){
+            editText2.append("0");
+        }
+    }
+
+    public void add(View view) {
+        op='+';
+    }
+
+    public void minus(View view) {
+        op='-';
+    }
+
+    public void mul(View view) {
+        op='*';
+    }
+
+    public void div(View view) {
+        op='/';
+    }
+
+    public void mod(View view) {
+        op='%';
+    }
+
+    public void equals(View view) {
+        float n1,n2,r;
+        switch(op)
+        {
+            case '+':n1=Float.parseFloat(editText1.getText().toString());
+                    n2=Float.parseFloat((editText2.getText().toString()));
+                    r=n1+n2;
+                    result.setText(""+r);
+                    break;
+            case '-':n1=Float.parseFloat(editText1.getText().toString());
+                    n2=Float.parseFloat(editText2.getText().toString());
+                    r=n1-n2;
+                    result.setText(""+r);
+                    break;
+            case '*':n1=Float.parseFloat(editText1.getText().toString());
+                    n2=Float.parseFloat(editText2.getText().toString());
+                    r=n1*n2;
+                    result.setText(""+r);
+                    break;
+            case '/':n1=Float.parseFloat(editText1.getText().toString());
+                    n2=Float.parseFloat(editText2.getText().toString());
+                    r=n1/n2;
+                    result.setText(""+r);
+                    break;
+            case '%':n1=Float.parseFloat(editText1.getText().toString());
+                    n2=Float.parseFloat(editText2.getText().toString());
+                    r=n1%n2;
+                    result.setText(""+r);
+                    break;
+        }
+
+    }
+
+    public void clear(View view) {
+        if(editText1.hasFocus()){
+            editText1.setText(" ");
+        }
+        if(editText2.hasFocus()){
+            editText2.setText("");
+        }
+    }
+
+    public void dot(View view) {
+        if(editText1.hasFocus()){
+            editText1.append(".");
+        }
+        if(editText2.hasFocus()){
+            editText2.append(".");
+        }
+    }
+
+}
